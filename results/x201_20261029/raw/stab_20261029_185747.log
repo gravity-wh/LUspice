@@ -1,0 +1,15 @@
+### mp_stability_run  TS=20261029_185747  CV=2  REPEATS=1  MATS=pg2k  HOST=8def9af4804b
+### [0] 编译 mp_lu_bench
+### bin=/workspace/mp_bench/out/mp_lu_bench  size=273128  md5=6afd2a9b397e
+### [1] 设备状态
+  /dev/htcd 存在
+  | Board       Name | GPU   Persist-M | Bus-id              | GPU-Util      sGPU-M |
+  | Pwr:Usage/Cap    | Temp       Perf | Memory-Usage        | GPU-State            |
+  |  GPU                    PID         Process Name                 GPU Memory     |
+  持有 /dev/htcd 的进程: bash/174 bash/24 lsof/175 
+### [2] pg2k  mtx=/workspace/race7_code/data/s0/pg2k.mtx  rhs=/workspace/race7_code/data/s0/pg2k.rhs  flt=/workspace/race7_code/data/s0/pg2k.flt
+  run#1  rc=137  wall=594.641s  NO_JSON  <<< 本次失败，计入失败率
+      
+### pg2k: 有效 0/1
+### JSONL=/workspace/mp_bench/out/stab_20261029_185747.jsonl
+### LOG=/workspace/mp_bench/out/stab_20261029_185747.log

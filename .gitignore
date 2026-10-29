@@ -33,6 +33,10 @@ core.*
 __pycache__/
 *.pyc
 
+# 例外：目标平台（沐曦 X201）实测的日志本身就是数据，必须入库
+!results/x201_20261029/raw/*.log
+!results/x201_20261029/raw/*.jsonl
+
 # ---- 编辑器 / 系统 ----
 .vscode/
 .idea/

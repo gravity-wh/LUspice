@@ -1,0 +1,8 @@
+### mp_stability_run  TS=20261029_200111  CV=3  REPEATS=1  MATS=pg2k  HOST=8def9af4804b  PER_RUN_SEC=600
+### bin=/workspace/mp_bench/out/mp_lu_bench  size=273128  md5=6afd2a9b397e
+### [1] 设备状态  target=GPU3  util=0%Disabled  procs=
+### [2] pg2k  mtx=/workspace/race7_code/data/s0/pg2k.mtx  rhs=/workspace/race7_code/data/s0/pg2k.rhs  flt=/workspace/race7_code/data/s0/pg2k.flt
+  run#1 (attempt 1)  rc=0  wall=213.662s  util 0%Disabled->1%Disabled  JSON:{"matrix":"/workspace/race7_code/data/s0/pg2k.mtx","n":4050,"nnz":23418,"lnnz_cpu":170960,"unnz_cpu":227016,"lnnz64":170960,"unnz64":227016,"lnnz32":170960,"unnz32":227016,"mem_fp64_mb":4.776,"mem_fp32_mb":3.184,"t_factor_st64_ms":23294.535,"t_factor_st32_ms":22346.148,"t_factor_par64_ms":759.983,"t_trisolve_st64_ms":118.555,"t_trisolve_st32_ms":116.026,"t_trisolve_par64_ms":13.702,"t_trisolve_par32_ms":13.774,"speedup_factor_st":1.042,"speedup_trisolve_st":1.022,"speedup_trisolve_par":0.995}
+### pg2k: 有效 1/1，共尝试 1 次，失败 0 次
+### JSONL=/workspace/mp_bench/out/stab_20261029_200111.jsonl
+### LOG=/workspace/mp_bench/out/stab_20261029_200111.log
