@@ -1,0 +1,19 @@
+{
+ "method": "批量SpMV常驻内核: grid=k(每block一个同构矩阵), vs 循环单启动; 值扰动±10%同构; RTX3060, cudaEvent计时",
+ "correctness": {"bandgap": 2.68e-16, "pg2k": 6.71e-16, "pg5k": 9.01e-16},
+ "batch_vs_loop": [
+  {"matrix":"bandgap","k":1,"ratio":0.95,"k":8,"ratio":0.12},{"matrix":"bandgap","k":16,"ratio":0.05},{"matrix":"bandgap","k":32,"ratio":0.03},
+  {"matrix":"pg2k","k":1,"ratio":1.01,"k":8,"ratio":0.13},{"matrix":"pg2k","k":16,"ratio":0.08},{"matrix":"pg2k","k":32,"ratio":0.06},
+  {"matrix":"pg5k","k":1,"ratio":1.03,"k":8,"ratio":0.14},{"matrix":"pg5k","k":16,"ratio":0.10},{"matrix":"pg5k","k":32,"ratio":0.05}
+ ],
+ "in_batch_fp32_gain": [
+  {"matrix":"pg2k","k":8,"gain":0.97,"k":16,"gain":1.12,"k":32,"gain":1.31},
+  {"matrix":"pg5k","k":8,"gain":1.46,"k":16,"gain":1.66,"k":32,"gain":1.11},
+  {"matrix":"bandgap","k":8,"gain":1.05,"k":16,"gain":1.01,"k":32,"gain":0.88}
+ ],
+ "verdict": {
+  "launch_amortization": "批量/循环 在 k=32 达 0.03-0.06x (17-33x 总加速) — 启动延迟被常驻内核摊薄, 单启动总耗时随k近乎持平",
+  "fp32_recovery": "批内 fp32/fp64 收益从单启动 ~1.0x 恢复到 pg5k k=8 1.46x / k=16 1.66x / pg2k k=32 1.31x (≥1.3x 达标); bandgap(113行)仍 ~1.0x (x-gather/延迟主导, 非启动)",
+  "conclusion": "连续批处理/常驻内核策略验证通过: 小矩阵(n≤5k)的启动延迟病被批量治愈, fp32 字节减半收益随之显现; Datasweep 同构批量场景可直接采用"
+ }
+}

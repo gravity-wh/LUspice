@@ -1,0 +1,270 @@
+{
+ "generated": "2026-08-15",
+ "count": 33,
+ "matrices": [
+  {
+   "matrix": "pg100k",
+   "n": 100352,
+   "T_cpu_s": 3.5503,
+   "GPU_res": "7.1e-10",
+   "S1": "PASS",
+   "note": "GPU fp32+GMRES-IR（良态）"
+  },
+  {
+   "matrix": "pg10k",
+   "n": 10082,
+   "T_cpu_s": 0.0739,
+   "GPU_res": "2.2e-12",
+   "S1": "PASS",
+   "note": "GPU fp32+GMRES-IR（良态）"
+  },
+  {
+   "matrix": "pg10k_amp",
+   "n": 10082,
+   "T_cpu_s": 0.0749,
+   "GPU_res": "6.6e-11",
+   "S1": "PASS",
+   "note": "GPU fp32+GMRES-IR（良态）"
+  },
+  {
+   "matrix": "pg10k_mesh",
+   "n": 10082,
+   "T_cpu_s": 0.0786,
+   "GPU_res": "1.4e-11",
+   "S1": "PASS",
+   "note": "GPU fp32+GMRES-IR（良态）"
+  },
+  {
+   "matrix": "pg25k",
+   "n": 25088,
+   "T_cpu_s": 0.2944,
+   "GPU_res": "4.2e-12",
+   "S1": "PASS",
+   "note": "GPU fp32+GMRES-IR（良态）"
+  },
+  {
+   "matrix": "pg2k",
+   "n": 4050,
+   "T_cpu_s": 0.0161,
+   "GPU_res": "1.9e-12",
+   "S1": "PASS",
+   "note": "GPU fp32+GMRES-IR（良态）"
+  },
+  {
+   "matrix": "pg50k",
+   "n": 49928,
+   "T_cpu_s": 0.9784,
+   "GPU_res": "2.5e-10",
+   "S1": "PASS",
+   "note": "GPU fp32+GMRES-IR（良态）"
+  },
+  {
+   "matrix": "pg5k",
+   "n": 5000,
+   "T_cpu_s": 0.0235,
+   "GPU_res": "3.3e-12",
+   "S1": "PASS",
+   "note": "GPU fp32+GMRES-IR（良态）"
+  },
+  {
+   "matrix": "rajat10",
+   "n": 30202,
+   "T_cpu_s": 0.0425,
+   "GPU_res": "0.0e+00",
+   "S1": "PASS",
+   "note": "GPU fp32+GMRES-IR（良态）"
+  },
+  {
+   "matrix": "rajat11",
+   "n": 135,
+   "T_cpu_s": 0.0,
+   "GPU_res": "2.1e-12",
+   "S1": "PASS",
+   "note": "GPU fp32+GMRES-IR（良态）"
+  },
+  {
+   "matrix": "rajat12",
+   "n": 1879,
+   "T_cpu_s": 0.0005,
+   "GPU_res": "3.5e-10",
+   "S1": "PASS",
+   "note": "GPU fp32+GMRES-IR（良态）"
+  },
+  {
+   "matrix": "rajat13",
+   "n": 7598,
+   "T_cpu_s": 0.001,
+   "GPU_res": "6.2e-13",
+   "S1": "PASS",
+   "note": "GPU fp32+GMRES-IR（良态）"
+  },
+  {
+   "matrix": "rajat15",
+   "n": 37261,
+   "T_cpu_s": 0,
+   "GPU_res": "FAIL",
+   "S1": "FAIL",
+   "note": "excluded: lu_tool cs_lu+GMRES-IR hangs ("
+  },
+  {
+   "matrix": "rajat16",
+   "n": 94294,
+   "T_cpu_s": 0.0004,
+   "GPU_res": "FAIL",
+   "S1": "FAIL",
+   "note": "fp32 status=singular"
+  },
+  {
+   "matrix": "rajat18",
+   "n": 94294,
+   "T_cpu_s": 0.0003,
+   "GPU_res": "FAIL",
+   "S1": "FAIL",
+   "note": "fp32 status=singular"
+  },
+  {
+   "matrix": "rajat19",
+   "n": 1157,
+   "T_cpu_s": 0.0001,
+   "GPU_res": "3.7e-11",
+   "S1": "PASS",
+   "note": "GPU fp32+GMRES-IR（良态）"
+  },
+  {
+   "matrix": "rajat20",
+   "n": 86916,
+   "T_cpu_s": 0.0003,
+   "GPU_res": "FAIL",
+   "S1": "FAIL",
+   "note": "fp32 status=singular"
+  },
+  {
+   "matrix": "rajat22",
+   "n": 39899,
+   "T_cpu_s": 0.0117,
+   "GPU_res": "3.2e-10",
+   "S1": "PASS",
+   "note": "GPU fp32+GMRES-IR（良态）"
+  },
+  {
+   "matrix": "rajat25",
+   "n": 87190,
+   "T_cpu_s": 0.0003,
+   "GPU_res": "FAIL",
+   "S1": "FAIL",
+   "note": "fp32 status=singular"
+  },
+  {
+   "matrix": "sky130-bandgap-reference-pvt",
+   "n": 113,
+   "T_cpu_s": 0.0,
+   "GPU_res": "1.03e-11",
+   "S1": "PASS",
+   "note": "fp64+IR 或 fp32+IR 8.5e-12"
+  },
+  {
+   "matrix": "sky130-beta-multiplier-reference-pvt-mc",
+   "n": 47,
+   "T_cpu_s": 0.0,
+   "GPU_res": "2.1e-11",
+   "S1": "PASS",
+   "note": "GPU fp32+GMRES-IR（良态）"
+  },
+  {
+   "matrix": "sky130-capacitive-neural-amplifier-pvt",
+   "n": 77,
+   "T_cpu_s": 0.0,
+   "GPU_res": "1.9e-4",
+   "S1": "REF",
+   "note": "lu_tool64c fp64+Ruiz 5e-16（GPU 结构对齐 347/363）"
+  },
+  {
+   "matrix": "sky130-constant-gm-stable-gain-amplifier-pvt",
+   "n": 60,
+   "T_cpu_s": 0.0,
+   "GPU_res": "4.5e-11",
+   "S1": "PASS",
+   "note": "GPU fp32+GMRES-IR（良态）"
+  },
+  {
+   "matrix": "sky130-dual-threshold-window-comparator-pvt",
+   "n": 163,
+   "T_cpu_s": 0.0,
+   "GPU_res": "9.2e-10",
+   "S1": "PASS",
+   "note": "GPU fp32+GMRES-IR（良态）"
+  },
+  {
+   "matrix": "sky130-flash-adc-3bit-pvt",
+   "n": 989,
+   "T_cpu_s": 0.0002,
+   "GPU_res": "REF",
+   "S1": "REF",
+   "note": "lu_tool32c_m1 shift=1e-7 1.7e-10"
+  },
+  {
+   "matrix": "sky130-ldo-ota5-robust-pvt-mc",
+   "n": 50,
+   "T_cpu_s": 0.0,
+   "GPU_res": "4.7e-10",
+   "S1": "PASS",
+   "note": "GPU fp32+GMRES-IR（良态）"
+  },
+  {
+   "matrix": "sky130-limiting-amplifier-offset-cancel-pvt",
+   "n": 86,
+   "T_cpu_s": 0.0,
+   "GPU_res": "1.2e-10",
+   "S1": "PASS",
+   "note": "GPU fp32+GMRES-IR（良态）"
+  },
+  {
+   "matrix": "sky130-ota-5t-gain40-pm60-noise50uv-pvt",
+   "n": 42,
+   "T_cpu_s": 0.0,
+   "GPU_res": "5.4e-10",
+   "S1": "PASS",
+   "note": "GPU fp32+GMRES-IR（良态）"
+  },
+  {
+   "matrix": "sky130-segmented-current-steering-dac-5bit-pvt-mc",
+   "n": 933,
+   "T_cpu_s": 0.0001,
+   "GPU_res": "3.2e-10",
+   "S1": "PASS",
+   "note": "GPU fp32+GMRES-IR（良态）"
+  },
+  {
+   "matrix": "sky130-switched-capacitor-2to1-converter-pvt",
+   "n": 315,
+   "T_cpu_s": 0.0001,
+   "GPU_res": "2.7e-10",
+   "S1": "PASS",
+   "note": "GPU fp32+GMRES-IR（良态）"
+  },
+  {
+   "matrix": "sky130-switched-capacitor-dac-6bit-pvt",
+   "n": 156,
+   "T_cpu_s": 0.0,
+   "GPU_res": "REF",
+   "S1": "REF",
+   "note": "lu_tool32c_m1 bare 3.5e-12"
+  },
+  {
+   "matrix": "sky130-thermometer-trim-resistor",
+   "n": 599,
+   "T_cpu_s": 0.0001,
+   "GPU_res": "3.2e-10",
+   "S1": "PASS",
+   "note": "GPU fp32+GMRES-IR（良态）"
+  },
+  {
+   "matrix": "sky130-transistor-divide-by-2",
+   "n": 165,
+   "T_cpu_s": 0.0,
+   "GPU_res": "4.2e-10",
+   "S1": "PASS",
+   "note": "GPU fp32+GMRES-IR（良态）"
+  }
+ ]
+}

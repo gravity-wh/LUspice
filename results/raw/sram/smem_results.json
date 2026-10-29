@@ -1,0 +1,15 @@
+{
+ "method": "波前三角求解 z 向量驻留共享内存(动态smem, 混合访问器), smem 预算扫描 0/8/16/32/48KB; RTX3060 cudaEvent; 正确性 vs 无smem版",
+ "correctness": "全部 0.00e+00 (12/12 组合, 首分歧@-1)",
+ "scan": [
+  {"matrix":"bandgap(113, levels 37/50)","smem0_ms":0.2853,"smem8_ms":0.2371,"smem16_ms":0.2370,"smem32_ms":0.2700,"smem48_ms":0.2371,"best_speedup":1.20},
+  {"matrix":"pg2k(4050, levels 704)","smem0_ms":28.446,"smem8_ms":27.965,"smem16_ms":29.664,"smem32_ms":28.412,"smem48_ms":28.419,"best_speedup":1.02},
+  {"matrix":"pg5k(5000, levels 830)","smem0_ms":39.507,"smem8_ms":39.781,"smem16_ms":44.068,"smem32_ms":42.940,"smem48_ms":41.098,"best_speedup":0.99}
+ ],
+ "occupancy_tradeoff": {"8KB":12,"16KB":6,"32KB":3,"48KB":2,"note":"RTX3060 每SM 100KB, maxBlocks/SM = 100/budget(多block化时的smem约束)"},
+ "verdict": {
+  "bandgap": "smem 缓存 z 1.20x — 小矩阵访存占比高, 缓存有效",
+  "pg": "~1.0x — 长依赖链(700-830级)波前同步主导, 瓶颈非 z 访存",
+  "conclusion": "smem 缓存在此实现形态收益有限(1.0-1.2x); 与策略②同结论: 长链瓶颈=同步; smem 预算权衡曲线为 P3 多block化提供依据(48KB→2 blocks/SM)"
+ }
+}

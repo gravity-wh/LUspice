@@ -1,0 +1,16 @@
+{
+ "method": "IR单迭代融合 vs 未融合: 残差SpMV(fp64)+前代+回代(fp32因子); 波前三角求解两版本共用; RTX3060 cudaEvent",
+ "inputs": "L/U 来自 scipy splu(Equil=False) 导出(fp32), 层级由 L/U 结构计算, b=A·ones",
+ "per_iter_ms": [
+  {"matrix":"bandgap(levels 37/50)","unfused_3launch":0.7062,"fused_1launch":null,"ratio":0.342},
+  {"matrix":"pg2k(levels 704)","unfused_3launch":28.499,"fused_1launch":null,"ratio":0.943},
+  {"matrix":"pg5k(levels 830)","unfused_3launch":39.574,"fused_1launch":null,"ratio":0.987}
+ ],
+ "correctness": "融合 vs 未融合 输出位级一致: 0.00e+00 (三个矩阵)",
+ "numerics_note": "fp32 因子 Richardson 迭代对 bandgap 发散(x1=7093 vs 真解1.0, 与Python参考一致)——真实数值事实, 印证 GMRES-IR 必要性; 单次迭代口径下融合对比不受影响",
+ "verdict": {
+  "bandgap_short_chain": "融合 3x (0.342x) — 启动摊薄主导, 短依赖链同步开销小",
+  "pg_long_chain": "0.94-0.99x — 波前同步(700+级)主导, 融合只能省启动",
+  "conclusion": "算子融合值得做(短链3x, 位级一致); 长链瓶颈是波前同步→需 level/panel 并行调度(P3)组合; 融合与调度应叠加"
+ }
+}

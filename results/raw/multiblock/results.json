@@ -1,0 +1,22 @@
+{
+ "method": "多block波次左视LU: 按列依赖层级波次调度, 每block一列(256线程), 波次间内核边界同步; pinv/rowat为CPU只读输入(pinv[i]<k/>k调度语义); deps由主机前代乘子记录; 编译 -fmad=false -Xcompiler -ffp-contract=off",
+ "correctness": {
+  "bandgap": {"vs_cpu_lu_ref": 1.17e-11, "residual": 1.14e-10, "same_path": 0.0, "pattern_diff": 0, "status": "PASS(良态, ≤1e-6)"},
+  "pg2k": {"vs_cpu_lu_ref": 2.42e-03, "residual": 1.03e-02, "same_path": 0.0, "pattern_diff": 0, "status": "条件数下限(kappa≈1e15, κ·ε≈0.2; 同路径逐位一致证明分解正确)"},
+  "pg5k": {"vs_cpu_lu_ref": 4.96e-03, "residual": 4.09e-02, "same_path": 0.0, "pattern_diff": 0, "status": "同上"}
+ },
+ "performance_ms": {
+  "bandgap": {"multiblock": 0.565, "single_block_PAR": 1.134, "speedup": 2.01},
+  "pg2k": {"multiblock": 69.99, "single_block_PAR": 239.42, "speedup": 3.42},
+  "pg5k": {"multiblock": 98.19, "single_block_PAR": 314.11, "speedup": 3.20}
+ },
+ "key_fixes": [
+  "FMA收缩语义不一致(主机g++ vs 设备nvcc) → 微小值符号翻转 → L模式分歧; 修复: -fmad=false -Xcompiler -ffp-contract=off, 模式差异→0",
+  "回代须用散射式(y[k]/=U列末项对角; y[Ui]-=Ux*y[k]), 行式累加读未计算行(U列条目行号<k) → 解全错",
+  "pinv调度语义: U次对角 pinv[i]<k, L次对角 pinv[i]>k (pinv=占位列)",
+  "deps=主机前代实际乘子记录(非L模式行集近似)",
+  "波次填充0基索引(wave_off[w-1])",
+  "U对角排除本列主元行(i!=rowat[k])"
+ ],
+ "dynamic_queue_assessment": "静态波次已达标(3.2-3.4x≥2x); 尾波(高level列少)有并行浪费, 但波数830×单列开销已摊薄; 动态原子队列列为后续可选优化, 当前不需要"
+}

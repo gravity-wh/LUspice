@@ -1,0 +1,269 @@
+{
+ "method": "P1: fp32 splu+IR(8); P2: Ruiz+同; P3: fp64 splu 兜底",
+ "results": [
+  {
+   "id": "sky130-bandgap-reference-pvt",
+   "path": "P1",
+   "err": 2.2147316794078787e-11,
+   "ok": true,
+   "info": "ok",
+   "t": 0.0
+  },
+  {
+   "id": "sky130-beta-multiplier-reference-pvt-mc",
+   "path": "P1",
+   "err": 9.441610301886672e-13,
+   "ok": true,
+   "info": "ok",
+   "t": 0.0
+  },
+  {
+   "id": "sky130-capacitive-neural-amplifier-pvt",
+   "path": "P3(fp64误差大)",
+   "err": 3.731012179236173e-05,
+   "ok": false,
+   "info": "P2 err=nan | P3 fp64 err=3.73e-05",
+   "t": 0.0
+  },
+  {
+   "id": "sky130-constant-gm-stable-gain-amplifier-pvt",
+   "path": "P1",
+   "err": 4.566313399170303e-13,
+   "ok": true,
+   "info": "ok",
+   "t": 0.0
+  },
+  {
+   "id": "sky130-dual-threshold-window-comparator-pvt",
+   "path": "P3(fp64误差大)",
+   "err": 1.109809957462598e-06,
+   "ok": false,
+   "info": "P2 err=nan | P3 fp64 err=1.11e-06",
+   "t": 0.0
+  },
+  {
+   "id": "sky130-flash-adc-3bit-pvt",
+   "path": "P3(fp64可解)",
+   "err": 1.1739440141378099e-07,
+   "ok": false,
+   "info": "P2 err=1.96e-01 | P3 fp64 err=1.17e-07",
+   "t": 0.0
+  },
+  {
+   "id": "sky130-ldo-ota5-robust-pvt-mc",
+   "path": "P1",
+   "err": 1.1424645717903739e-11,
+   "ok": true,
+   "info": "ok",
+   "t": 0.0
+  },
+  {
+   "id": "sky130-limiting-amplifier-offset-cancel-pvt",
+   "path": "P3(fp64可解)",
+   "err": 9.179897739804912e-07,
+   "ok": false,
+   "info": "P2 err=nan | P3 fp64 err=9.18e-07",
+   "t": 0.0
+  },
+  {
+   "id": "sky130-ota-5t-gain40-pm60-noise50uv-pvt",
+   "path": "P3(fp64误差大)",
+   "err": 6.743389769872376e-06,
+   "ok": false,
+   "info": "P2 err=nan | P3 fp64 err=6.74e-06",
+   "t": 0.0
+  },
+  {
+   "id": "sky130-segmented-current-steering-dac-5bit-pvt-mc",
+   "path": "P3(fp64可解)",
+   "err": 3.211697611283595e-07,
+   "ok": false,
+   "info": "P2 err=1.43e+26 | P3 fp64 err=3.21e-07",
+   "t": 0.0
+  },
+  {
+   "id": "sky130-switched-capacitor-2to1-converter-pvt",
+   "path": "P3(fp64可解)",
+   "err": 1.543420971639819e-07,
+   "ok": false,
+   "info": "P2 err=1.27e+01 | P3 fp64 err=1.54e-07",
+   "t": 0.0
+  },
+  {
+   "id": "sky130-switched-capacitor-dac-6bit-pvt",
+   "path": "P3(fp64可解)",
+   "err": 4.167679035474856e-08,
+   "ok": false,
+   "info": "P2 err=nan | P3 fp64 err=4.17e-08",
+   "t": 0.0
+  },
+  {
+   "id": "sky130-thermometer-trim-resistor",
+   "path": "P1",
+   "err": 2.0936325148508778e-10,
+   "ok": true,
+   "info": "ok",
+   "t": 0.0
+  },
+  {
+   "id": "sky130-transistor-divide-by-2",
+   "path": "P3(fp64可解)",
+   "err": 2.182075273643896e-09,
+   "ok": false,
+   "info": "P2 err=4.23e-02 | P3 fp64 err=2.18e-09",
+   "t": 0.0
+  },
+  {
+   "id": "rajat10",
+   "path": "P1",
+   "err": 0.0,
+   "ok": true,
+   "info": "ok",
+   "t": 0.1
+  },
+  {
+   "id": "rajat11",
+   "path": "P1",
+   "err": 1.4309254725461315e-13,
+   "ok": true,
+   "info": "ok",
+   "t": 0.0
+  },
+  {
+   "id": "rajat12",
+   "path": "P1",
+   "err": 6.61508767316707e-15,
+   "ok": true,
+   "info": "ok",
+   "t": 0.0
+  },
+  {
+   "id": "rajat13",
+   "path": "P1",
+   "err": 1.995658992724575e-15,
+   "ok": true,
+   "info": "ok",
+   "t": 0.0
+  },
+  {
+   "id": "rajat15",
+   "path": "P1",
+   "err": 2.2658557365090377e-11,
+   "ok": true,
+   "info": "ok",
+   "t": 1.6
+  },
+  {
+   "id": "rajat16",
+   "path": "P3(fp64也失败)",
+   "err": null,
+   "ok": false,
+   "info": "P2 RuntimeError: Factor is exactly singular | P3 RuntimeError",
+   "t": 2.3
+  },
+  {
+   "id": "rajat18",
+   "path": "P3(fp64也失败)",
+   "err": null,
+   "ok": false,
+   "info": "P2 RuntimeError: Factor is exactly singular | P3 RuntimeError",
+   "t": 1.8
+  },
+  {
+   "id": "rajat19",
+   "path": "P1",
+   "err": 4.177453122551308e-11,
+   "ok": true,
+   "info": "ok",
+   "t": 0.0
+  },
+  {
+   "id": "rajat20",
+   "path": "P3(fp64也失败)",
+   "err": null,
+   "ok": false,
+   "info": "P2 RuntimeError: Factor is exactly singular | P3 RuntimeError",
+   "t": 6.9
+  },
+  {
+   "id": "rajat22",
+   "path": "P1",
+   "err": 7.850138513382185e-10,
+   "ok": true,
+   "info": "ok",
+   "t": 0.2
+  },
+  {
+   "id": "rajat25",
+   "path": "P3(fp64也失败)",
+   "err": null,
+   "ok": false,
+   "info": "P2 RuntimeError: Factor is exactly singular | P3 RuntimeError",
+   "t": 12.3
+  },
+  {
+   "id": "pg2k",
+   "path": "P3(fp64误差大)",
+   "err": 0.0016524685360808041,
+   "ok": false,
+   "info": "P2 RuntimeError: Factor is exactly singular | P3 fp64 err=1.65e-03",
+   "t": 0.0
+  },
+  {
+   "id": "pg5k",
+   "path": "P3(fp64误差大)",
+   "err": 0.0004605627403962725,
+   "ok": false,
+   "info": "P2 RuntimeError: Factor is exactly singular | P3 fp64 err=4.61e-04",
+   "t": 0.0
+  },
+  {
+   "id": "pg10k",
+   "path": "P3(fp64误差大)",
+   "err": 0.00027265495697039686,
+   "ok": false,
+   "info": "P2 RuntimeError: Factor is exactly singular | P3 fp64 err=2.73e-04",
+   "t": 0.1
+  },
+  {
+   "id": "pg10k_amp",
+   "path": "P3(fp64误差大)",
+   "err": 6153397.864582171,
+   "ok": false,
+   "info": "P2 RuntimeError: Factor is exactly singular | P3 fp64 err=6.15e+06",
+   "t": 0.1
+  },
+  {
+   "id": "pg10k_mesh",
+   "path": "P3(fp64误差大)",
+   "err": 9.937922414053976e-05,
+   "ok": false,
+   "info": "P2 RuntimeError: Factor is exactly singular | P3 fp64 err=9.94e-05",
+   "t": 0.1
+  },
+  {
+   "id": "pg25k",
+   "path": "P3(fp64误差大)",
+   "err": 0.0005377106524516493,
+   "ok": false,
+   "info": "P2 RuntimeError: Factor is exactly singular | P3 fp64 err=5.38e-04",
+   "t": 0.3
+  },
+  {
+   "id": "pg50k",
+   "path": "P3(fp64误差大)",
+   "err": 4565569.190793972,
+   "ok": false,
+   "info": "P2 RuntimeError: Factor is exactly singular | P3 fp64 err=4.57e+06",
+   "t": 0.7
+  },
+  {
+   "id": "pg100k",
+   "path": "P3(fp64误差大)",
+   "err": 204067.6250371676,
+   "ok": false,
+   "info": "P2 RuntimeError: Factor is exactly singular | P3 fp64 err=2.04e+05",
+   "t": 1.8
+  }
+ ]
+}

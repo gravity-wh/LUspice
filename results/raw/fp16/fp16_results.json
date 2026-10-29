@@ -1,0 +1,88 @@
+{
+ "method": "CSR SpMV 值存储精度对比 (fp64/fp32/fp16, fp16=__half 值 + fp64 累加), GPU RTX3060; CPU 侧含 Ruiz 后值域统计",
+ "cpu_ruiz_fp16_analysis": [
+  {
+   "matrix": "rajat10",
+   "orig_dyn_log10": 0.0,
+   "ruiz_max": 1.0,
+   "ruiz_min": 1.0,
+   "underflow_pct": 0.0,
+   "fp16_spmv_err": 0.0
+  },
+  {
+   "matrix": "rajat11",
+   "orig_dyn_log10": 7.2,
+   "ruiz_max": 1.0,
+   "ruiz_min": 4.74e-07,
+   "underflow_pct": 4.4,
+   "fp16_spmv_err": 0.95
+  },
+  {
+   "matrix": "rajat12",
+   "orig_dyn_log10": 9.0,
+   "ruiz_max": 1.0,
+   "ruiz_min": 1.25e-07,
+   "underflow_pct": 6.0,
+   "fp16_spmv_err": 1.0
+  },
+  {
+   "matrix": "pg2k",
+   "orig_dyn_log10": 13.9,
+   "ruiz_max": 1.0,
+   "ruiz_min": 2.27e-09,
+   "underflow_pct": 0.2,
+   "fp16_spmv_err": 138.0
+  },
+  {
+   "matrix": "pg5k",
+   "orig_dyn_log10": 13.8,
+   "ruiz_max": 1.0,
+   "ruiz_min": 2.25e-09,
+   "underflow_pct": 0.2,
+   "fp16_spmv_err": 134.0
+  },
+  {
+   "matrix": "bandgap",
+   "orig_dyn_log10": 28.2,
+   "ruiz_max": 1.0,
+   "ruiz_min": 1.36e-27,
+   "underflow_pct": 23.7,
+   "fp16_spmv_err": 2.74
+  }
+ ],
+ "gpu_bench": [
+  {
+   "matrix": "rajat10",
+   "n": 30202,
+   "nnz": 130303,
+   "t_fp64_ms": 0.01249,
+   "t_fp32_ms": 0.01153,
+   "t_fp16_ms": 0.01331,
+   "bw_fp64_gbs": 125.2,
+   "bw_fp32_gbs": 135.6,
+   "bw_fp16_gbs": 117.5,
+   "err_fp32": 0.0,
+   "err_fp16": 0.0,
+   "speedup_fp16_vs_fp32": 0.87
+  },
+  {
+   "matrix": "bandgap",
+   "n": 113,
+   "nnz": 616,
+   "t_fp64_ms": 0.00709,
+   "t_fp32_ms": 0.00714,
+   "t_fp16_ms": 0.00708,
+   "bw_fp64_gbs": 1.0,
+   "bw_fp32_gbs": 1.0,
+   "bw_fp16_gbs": 1.0,
+   "err_fp32": 5.82e-08,
+   "err_fp16": 0.000854,
+   "speedup_fp16_vs_fp32": 1.01
+  }
+ ],
+ "verdict": {
+  "correctness": "fp16 值存储误差≤1e-6 仅 rajat10 类（全值同量级, 误差0.0）；其余矩阵 Ruiz 保持比值→极小值下溢, 误差 8.5e-4~138, 不可用",
+  "performance": "朴素 CSR 内核上 fp16 带宽 0.87×fp32——值字节减半被列索引/x-gather 掩盖（内核未达带宽饱和, 与 fp32 朴素内核同理）；收益需 SELL 打包+x 驻留内核才可能兑现（后续优化点）",
+  "scope": "fp16 值存储在电路 MNA 矩阵适用面=1/33（rajat10 类）；与 FP8 量化不同, 动态范围比值保持使 Ruiz 无法救 fp16"
+ }
+}

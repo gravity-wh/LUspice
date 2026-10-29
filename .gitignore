@@ -1,0 +1,41 @@
+# ---- 构建产物 ----
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+*.exe
+mp_lu_bench
+mp_spmv_bench
+test_lu
+test_lu_gpu
+test_lu_gpu_f32
+test_lu_gpu_par
+test_lu_wave
+test_lu_gpu_ir64
+test_selector
+build/
+cmake-build-*/
+
+# ---- 数据（体积过大，不入版本库）----
+data/matrices/
+data/rhs_generated/
+*.mtx
+*.rhs
+/tmp/
+s0/
+
+# ---- 运行产物 ----
+*.log
+*.out
+*.nls
+core.*
+__pycache__/
+*.pyc
+
+# ---- 编辑器 / 系统 ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp

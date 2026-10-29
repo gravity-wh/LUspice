@@ -1,0 +1,34 @@
+{
+ "generated": "2026-08-16 (R10)",
+ "note": "wave/level factor（R9，-fmad=false）SR 曲线",
+ "rows": [
+  {
+   "matrix": "pg2k",
+   "n": 4050,
+   "T_cpu_s": 0.0158,
+   "T_gpu_s": 0.1026,
+   "SR": 0.154,
+   "mode": "wave/level factor (R9)"
+  },
+  {
+   "matrix": "pg5k",
+   "n": 5000,
+   "T_cpu_s": 0.0231,
+   "T_gpu_s": 0.1379,
+   "SR": 0.168,
+   "mode": "wave/level factor (R9)"
+  },
+  {
+   "matrix": "pg10k",
+   "n": 10082,
+   "T_cpu_s": 0.0729,
+   "T_gpu_s": 0.3346,
+   "SR": 0.218,
+   "mode": "wave/level factor (R9)"
+  }
+ ],
+ "goal": {
+  "target": 0.15,
+  "met": true
+ }
+}
